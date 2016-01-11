@@ -6,6 +6,7 @@
 # to /bin (on linux)
 import os
 import sys
+import shutil
 
 if (len(sys.argv) - 1):
     output_folder = str(sys.argv[1])
@@ -20,3 +21,5 @@ folders = [
 
 for f in folders:
     os.makedirs(output_folder + "/" + f)
+
+shutil.rmtree(output_folder + "/" + ".git")
